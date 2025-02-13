@@ -53,14 +53,14 @@ if [ -d "./resources" ]; then
     # Connexion à MySQL et création de l'utilisateur giteauser avec tous les privilèges
     sudo mysql -u root -p <<EOF
     CREATE DATABASE IF NOT EXISTS gitea-db;
-    CREATE USER IF NOT EXISTS 'giteauser'@'localhost' IDENTIFIED BY 'test';
+    CREATE USER IF NOT EXISTS 'giteauser'@'localhost' IDENTIFIED BY 'K4amoul0x';
     GRANT ALL PRIVILEGES ON gitea-db.* TO 'giteauser'@'localhost' WITH GRANT OPTION;
     FLUSH PRIVILEGES;
 EOF
 
     # Importation du fichier SQL s'il existe
     if [ -f "./resources/gitea.sql" ]; then
-        sudo mysql -u giteauser -p test gitea-db < ./resources/gitea.sql
+        sudo mysql -u giteauser -p K4amoul0x gitea-db < ./resources/gitea.sql
     else
         echo "[ERREUR] Fichier gitea.sql introuvable !"
         exit 1
@@ -73,7 +73,7 @@ if [ -f "./resources" ]; then
     echo "[INFO] Mise à jour de la configuration de Gitea..."
     if [ -f "./resources/gitea-repos.tar.gz" ]; then
         sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /var/
-        sudo chown -R gitea:gitea /snap/gitea
+        sudo chown -R gitea:gitea /var/snap/gitea
     else
         echo "[ERREUR] Fichier gitea-repos.tar.gz introuvable !"
         exit 1
