@@ -19,7 +19,7 @@ sudo apt-get update -y
 
 # Installation des services nécessaires
 echo "[INFO] Installation de Java, Jenkins et MySQL..."
-sudo apt install -y openjdk-11-jdk -y
+sudo apt install -y openjdk-17-jdk -y
 
 sudo apt-get install jenkins mysql-server -y
 
