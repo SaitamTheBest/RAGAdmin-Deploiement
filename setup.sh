@@ -34,7 +34,7 @@ if [ ! -d "./resources" ]; then
 fi
 
 # Configuration de Jenkins
-if [ -d "./resources/jenkins" ]; then
+if [ -d "./resources" ]; then
     echo "[INFO] Mise à jour de la configuration de Jenkins..."
     if [ -f "./resources/jenkins-home.tar.gz" ]; then
         sudo tar -xzvf ./resources/jenkins-home.tar.gz -C /
@@ -47,7 +47,7 @@ fi
 
 # Configuration de MySQL
 # Configuration de MySQL
-if [ -d "./resources/mysql" ]; then
+if [ -d "./resources" ]; then
     echo "[INFO] Configuration de MySQL..."
     
     # Connexion à MySQL et création de l'utilisateur giteauser avec tous les privilèges
@@ -69,7 +69,7 @@ fi
 
 
 # Configuration de Gitea
-if [ -f "./resources/gitea/app.ini" ]; then
+if [ -f "./resources" ]; then
     echo "[INFO] Mise à jour de la configuration de Gitea..."
     if [ -f "./resources/gitea-repos.tar.gz" ]; then
         sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /
