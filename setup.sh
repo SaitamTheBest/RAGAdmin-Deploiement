@@ -72,7 +72,7 @@ fi
 if [ -f "./resources" ]; then
     echo "[INFO] Mise à jour de la configuration de Gitea..."
     if [ -f "./resources/gitea-repos.tar.gz" ]; then
-        sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /
+        sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /var/
         sudo chown -R gitea:gitea /snap/gitea
     else
         echo "[ERREUR] Fichier gitea-repos.tar.gz introuvable !"
