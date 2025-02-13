@@ -37,7 +37,7 @@ fi
 if [ -d "./resources/jenkins" ]; then
     echo "[INFO] Mise à jour de la configuration de Jenkins..."
     if [ -f "./resources/jenkins-home.tar.gz" ]; then
-        sudo tar -xzvf ./resources/jenkins-home.tar.gz -C /var/lib/jenkins
+        sudo tar -xzvf ./resources/jenkins-home.tar.gz -C /
         sudo chown -R jenkins:jenkins /var/lib/jenkins
     else
         echo "[ERREUR] Fichier jenkins-home.tar.gz introuvable !"
@@ -72,8 +72,8 @@ fi
 if [ -f "./resources/gitea/app.ini" ]; then
     echo "[INFO] Mise à jour de la configuration de Gitea..."
     if [ -f "./resources/gitea-repos.tar.gz" ]; then
-        sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /var/lib/gitea
-        sudo chown -R gitea:gitea /var/lib/gitea
+        sudo tar -xzvf ./resources/gitea-repos.tar.gz -C /
+        sudo chown -R gitea:gitea /snap/gitea
     else
         echo "[ERREUR] Fichier gitea-repos.tar.gz introuvable !"
         exit 1
